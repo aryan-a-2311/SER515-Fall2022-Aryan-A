@@ -1,7 +1,7 @@
 package ptbs;
 
 public interface ProductMenu {
-    public abstract void showMenu();
+    public abstract void showMenu() throws Exception;
     public abstract void showAddButton();
     public abstract void showViewButton();
     public abstract void showRadioButton();

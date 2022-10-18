@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Login {
+    public int userType;
+    public String usrNam;
     Login() throws Exception {
         Scanner sc = new Scanner(System.in);
         System.out.println("--------------------------------LOGIN GUI--------------------------------");
@@ -18,9 +20,12 @@ public class Login {
             String pWord = sc.next();
             if(validate(uName, pWord, b_s)){
                 System.out.println("Logged In Successfully");
+                this.userType = b_s;
+                this.usrNam = uName;
             }
             else{
                 System.out.println("Logged Failed");
+                System.exit(-1);
             }
         }
         else
