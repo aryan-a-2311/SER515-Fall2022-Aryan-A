@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 public class ProduceProductMenu implements ProductMenu{
+    ClassProductList products = new ClassProductList();
     @Override
     public void showMenu() throws Exception {
         File file = new File("ptbs/ProductInfo.txt");
@@ -17,7 +18,8 @@ public class ProduceProductMenu implements ProductMenu{
             tempMeatArray = tempStr.split(":");
             if(tempMeatArray[0].equalsIgnoreCase("Produce"))
             {
-                System.out.println(tempMeatArray[1]);
+//                System.out.println(tempMeatArray[1]);
+                products.add(tempMeatArray[1]);
             }
         }
     }

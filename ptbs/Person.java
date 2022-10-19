@@ -1,9 +1,11 @@
 package ptbs;
 
-public abstract class Person {
-    private ProductMenu theProductMenu;
+import java.io.IOException;
 
-    public abstract void showMenu();
+public abstract class Person {
+    protected ProductMenu theProductMenu;
+
+    public abstract void showMenu() throws IOException, Exception;
 
     public void showAddButton() {
         System.out.println("Call the implementation to show the Add buttons.");
@@ -21,5 +23,5 @@ public abstract class Person {
         System.out.println("Call the implementation to show the labels.");
     }
 
-    public abstract ProductMenu CreateProductMenu(int type) throws Exception;
+    public abstract ClassProductList CreateProductMenu(int type) throws Exception;
 }
