@@ -24,12 +24,18 @@ public class Buyer extends Person{
         }
     }
 
+    // Creating the Meat or Produce Menu for the Buyer
     @Override
     public ClassProductList CreateProductMenu(int type) throws Exception {
         if (type == 0)
         {
             MeatProductMenu buyerMeat = new MeatProductMenu();
             buyerMeat.showMenu();
+            buyerMeat.showAddButton();
+            buyerMeat.showViewButton();
+            buyerMeat.showRadioButton();
+            buyerMeat.showLabels();
+            buyerMeat.showComboxes();
             this.theProductMenu = buyerMeat;
             return buyerMeat.products;
         }
@@ -37,6 +43,11 @@ public class Buyer extends Person{
         {
             ProduceProductMenu buyerProduce = new ProduceProductMenu();
             buyerProduce.showMenu();
+            buyerProduce.showAddButton();
+            buyerProduce.showViewButton();
+            buyerProduce.showRadioButton();
+            buyerProduce.showLabels();
+            buyerProduce.showComboxes();
             this.theProductMenu = buyerProduce;
             return buyerProduce.products;
         }

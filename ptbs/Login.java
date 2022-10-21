@@ -9,7 +9,7 @@ public class Login {
     public String usrNam;
     Login() throws Exception {
         Scanner sc = new Scanner(System.in);
-        System.out.println("\n--------------------------------LOGIN GUI--------------------------------");
+        System.out.println("\n====================LOGIN GUI====================");
         System.out.println("\nAre you a:\n0.Buyer \nor a \n1.Seller?\n\n Enter 0 or 1: ");
         int b_s = sc.nextInt();
         if(b_s == 0 || b_s == 1)

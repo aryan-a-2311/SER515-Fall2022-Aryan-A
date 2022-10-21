@@ -15,7 +15,7 @@ public class Facade {
     private ClassProductList userProductList = new ClassProductList();
 
     public void newFacade() throws Exception {
-        System.out.println("\n----------------------------FACADE STARTED----------------------------");
+        System.out.println("\n==================== FACADE STARTED ====================");
         //User Login
         login();
 
@@ -35,8 +35,9 @@ public class Facade {
         System.out.println("\nYour Entire Menu: ");
         thePerson.showMenu();
 
-        System.out.println("\n----------------------------ITERATING OVER THE LIST (ITERATOR PATTERN)----------------------------");
-        // Iterator Implementation
+        System.out.println("\n====================ITERATING OVER THE LIST (ITERATOR PATTERN)====================");
+
+        // Iterator Pattern Implementation
         System.out.println("\nYour Requested Menu: ");
         ProductIterator iterator = new ProductIterator();
         iterator.listOfProducts = userProductList;
@@ -44,7 +45,8 @@ public class Facade {
             System.out.println(iterator.Next());
         }
 
-        System.out.println("\n----------------------------REMINDERS STARTED (VISITOR PATTERN)----------------------------");
+        System.out.println("\n====================REMINDERS STARTED (VISITOR PATTERN)====================");
+        // Visitor Pattern Implementation
         this.remind();
     }
 
@@ -52,8 +54,8 @@ public class Facade {
         Login newLogin = new Login();
         this.userName = newLogin.usrNam;
         this.UserType = newLogin.userType;
-        // Creating the Person. Bridge and Factory Implementation
-        System.out.println("\n----------------------------CREATED PERSON (BRIDGE AND FACTORY PATTERNS)----------------------------");
+        // Creating the Person. Bridge and Factory Pattern Implementation
+        System.out.println("\n====================CREATED PERSON (BRIDGE AND FACTORY PATTERNS)====================");
         if(this.UserType == 0){
             this.thePerson = new Buyer(this.userName);
         }
@@ -94,10 +96,12 @@ public class Facade {
         this.accept(nodeVisitor);
     }
 
-    public void createUser(UserInfoItem userinfoitem) {}
+    public void createUser(UserInfoItem userinfoitem) {
+        System.out.println("Creating User");
+    }
 
     public void createProductList() throws Exception {
-
+        System.out.println("Creating List");
     }
 
     //Generate appropriate product List and attach it to THIS user
@@ -124,17 +128,18 @@ public class Facade {
 
     }
 
-    public Product SelectProduct() { return null; }
+    public Product SelectProduct() {
+        System.out.println("Selecting Product");
+        return null;
+    }
 
-    //Show the Meat or Produce Menu. Bridge and Factory Implementation
+    //Show the Meat or Produce Menu. Bridge and Factory Pattern Implementation
     public void productOperation() throws Exception {
-        System.out.println("\n----------------------------CREATED THE SELECTED MENU (BRIDGE AND FACTORY PATTERNS)----------------------------");
+        System.out.println("\n====================CREATED THE SELECTED MENU (BRIDGE AND FACTORY PATTERNS)====================");
         if (this.nProductCategory == 0){
-//            System.out.println("Your Meat Menu: ");
            this.productListMenu =  thePerson.CreateProductMenu(0);
         }
         else{
-//            System.out.println("Your Produce Menu: ");
             this.productListMenu = thePerson.CreateProductMenu(1);
         }
     }

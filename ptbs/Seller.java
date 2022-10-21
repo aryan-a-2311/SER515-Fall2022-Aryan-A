@@ -24,12 +24,18 @@ public class Seller extends Person{
         }
     }
 
+    // Creating the Meat or Produce Menu for the Seller
     @Override
     public ClassProductList CreateProductMenu(int type) throws Exception {
         if (type == 0)
         {
             MeatProductMenu sellerMeat = new MeatProductMenu();
             sellerMeat.showMenu();
+            sellerMeat.showAddButton();
+            sellerMeat.showViewButton();
+            sellerMeat.showRadioButton();
+            sellerMeat.showLabels();
+            sellerMeat.showComboxes();
             this.theProductMenu = sellerMeat;
             return sellerMeat.products;
         }
@@ -37,6 +43,11 @@ public class Seller extends Person{
         {
             ProduceProductMenu sellerProduce = new ProduceProductMenu();
             sellerProduce.showMenu();
+            sellerProduce.showAddButton();
+            sellerProduce.showViewButton();
+            sellerProduce.showRadioButton();
+            sellerProduce.showLabels();
+            sellerProduce.showComboxes();
             this.theProductMenu = sellerProduce;
             return sellerProduce.products;
         }
